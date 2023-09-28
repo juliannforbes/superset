@@ -108,7 +108,10 @@ export const dndGroupByControl: SharedControlConfig<
 export const dndColumnsControl: typeof dndGroupByControl = {
   ...dndGroupByControl,
   label: t('Columns'),
-  description: t('One or many columns to pivot as columns'),
+  description: t(
+    "Columns are one of the table's dimensions. " +
+      "Add columns from the dataset here to group the table's columns. ",
+  ),
 };
 
 export const dndSeriesControl: typeof dndGroupByControl = {
@@ -190,8 +193,8 @@ export const dndSortByControl: SharedControlConfig<
   label: t('Sort by'),
   default: null,
   description: t(
-    'Metric used to define how the top series are sorted if a series or row limit is present. ' +
-      'If undefined reverts to the first metric (where appropriate).',
+    'This metric is used to define rows selection criteria (how the rows are sorted) ' +
+      'if the row limit is applied. If not defined, the sorting reverts to the first metric (where appropriate).',
   ),
   mapStateToProps: ({ datasource }) => ({
     columns: datasource?.columns || [],
