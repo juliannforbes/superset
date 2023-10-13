@@ -133,7 +133,10 @@ const config: ControlPanelConfig = {
             config: {
               ...sharedControls.row_limit,
               label: t('Cell limit'),
-              description: t('Limits the number of cells that get retrieved.'),
+              description: t(
+                'Limits the number of the cells that are computed in the query that is the source' +
+                  ' of the data used for this chart. ',
+              ),
             },
           },
         ],

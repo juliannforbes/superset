@@ -47,8 +47,9 @@ const config: ControlPanelConfig = {
                 ['cca3', t('code ISO 3166-1 alpha-3 (cca3)')],
               ],
               description: t(
-                'The country code standard that Superset should expect ' +
-                  'to find in the [country] column',
+                'Standard for country code used for the country column in the dataset you are using. ' +
+                  'Country codes are short alphabetic or numeric geographical codes (geocodes) developed ' +
+                  'to represent countries and dependent areas.',
               ),
             },
           },
@@ -63,7 +64,7 @@ const config: ControlPanelConfig = {
               type: 'CheckboxControl',
               label: t('Sort by metric'),
               description: t(
-                'Whether to sort results by the selected metric in descending order.',
+                'If enabled, this control sorts the results by the selected metric in descending order. ',
               ),
             },
           },
@@ -138,7 +139,9 @@ const config: ControlPanelConfig = {
   controlOverrides: {
     entity: {
       label: t('Country Column'),
-      description: t('3 letter code of the country'),
+      description: t(
+        'Country column must include country code or name based on the selection made in the field "Country Field Type". ',
+      ),
     },
     secondary_metric: {
       label: t('Bubble Size'),
